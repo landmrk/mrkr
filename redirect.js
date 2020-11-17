@@ -11,48 +11,34 @@ function isUrl(url) {
 
 (function () {
   var _redirect = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var location, issueNumber, referral, headers, body, options, homepage, response, payload, message, title, url;
+    var location, issueNumber, homepage, response, payload, message, title, url;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             location = window.location;
-            issueNumber = location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP + 1]; // Ping collection endpoint here
-
-            referral = document.referrer;
-            headers = new Headers();
-            headers.append("Content-Type", "application/json");
-            body = {
-              "name": "Princess Leia"
-            };
-            options = {
-              method: "POST",
-              headers: headers,
-              mode: "cors",
-              body: JSON.stringify(body)
-            };
-            fetch("https://enokmjxolgpq.x.pipedream.net/", options);
+            issueNumber = location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP + 1];
             homepage = location.protocol + "//" + location.hostname + (location.port ? ":" + location.port : "") + "/" + location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP];
-            _context.prev = 9;
-            _context.next = 12;
+            _context.prev = 3;
+            _context.next = 6;
             return fetch(GITHUB_ISSUES_LINK + issueNumber);
 
-          case 12:
+          case 6:
             response = _context.sent;
 
             if (!(response.status !== 200)) {
-              _context.next = 16;
+              _context.next = 10;
               break;
             }
 
             location.replace(homepage);
             return _context.abrupt("return");
 
-          case 16:
-            _context.next = 18;
+          case 10:
+            _context.next = 12;
             return response.json();
 
-          case 18:
+          case 12:
             payload = _context.sent;
             message = payload.message, title = payload.title;
 
@@ -72,20 +58,20 @@ function isUrl(url) {
               }
             }
 
-            _context.next = 26;
+            _context.next = 20;
             break;
 
-          case 23:
-            _context.prev = 23;
-            _context.t0 = _context["catch"](9);
+          case 17:
+            _context.prev = 17;
+            _context.t0 = _context["catch"](3);
             location.replace(homepage);
 
-          case 26:
+          case 20:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[9, 23]]);
+    }, _callee, null, [[3, 17]]);
   }));
 
   function redirect() {
