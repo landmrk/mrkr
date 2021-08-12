@@ -18,7 +18,7 @@ function isUrl(url) {
           case 0:
             location = window.location;
             refer = document.referrer;
-            fetch("https://enokmjxolgpq.x.pipedream.net/?refer=".concat(refer));
+//             fetch("https://enokmjxolgpq.x.pipedream.net/?refer=".concat(refer));
             issueNumber = location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP + 1];
             homepage = location.protocol + "//" + location.hostname + (location.port ? ":" + location.port : "") + "/" + location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP];
             _context.prev = 5;
