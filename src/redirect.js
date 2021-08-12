@@ -8,7 +8,7 @@ function isUrl(url) {
 (async function redirect() {
   const location = window.location;
   const refer = document.referrer;
-  fetch(`https://enokmjxolgpq.x.pipedream.net/?refer=${refer}`)
+//   fetch(`https://enokmjxolgpq.x.pipedream.net/?refer=${refer}`)
   const issueNumber = location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP + 1];
   const homepage =
     location.protocol +
